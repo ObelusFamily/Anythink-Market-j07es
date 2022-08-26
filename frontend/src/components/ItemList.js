@@ -14,13 +14,17 @@ const ItemList = (props) => {
   return (
     <div className="container py-2">
       <div className="row">
-        {props.items.map((item) => {
-          return (
-            <div className="col-sm-4 pb-2" key={item.slug}>
-              <ItemPreview item={item} />
-            </div>
-          );
-        })}
+        {props.items
+          .filter((item) => {
+            return props.titleFilter === null || item.title.includes(props.titleFilter)
+          })
+          .map((item) => {
+            return (
+              <div className="col-sm-4 pb-2" key={item.slug}>
+                <ItemPreview item={item} />
+              </div>
+            );
+          })}
       </div>
 
       <ListPagination
