@@ -16,7 +16,10 @@ const ItemList = (props) => {
       <div className="row">
         {props.items
           .filter((item) => {
-            return props.titleFilter === null || item.title.includes(props.titleFilter)
+            return (
+              props.titleFilter === null ||
+              item.title.includes(props.titleFilter)
+            );
           })
           .map((item) => {
             return (

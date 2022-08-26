@@ -72,7 +72,7 @@ const mapDispatchToProps = (dispatch) => ({
 const MainView = (props) => {
   let titleFilter = null;
   if (props.title && props.title.length >= 3) {
-    titleFilter = props.title
+    titleFilter = props.title;
   }
   return (
     <div>

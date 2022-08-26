@@ -3,7 +3,7 @@ import logo from "../../imgs/logo.png";
 
 const Banner = (props) => {
   function handleChange(event) {
-    props.onSearchText(event.target.value)
+    props.onSearchText(event.target.value);
   }
 
   return (
