@@ -10,6 +10,7 @@ import {
   PROFILE_PAGE_UNLOADED,
   PROFILE_FAVORITES_PAGE_LOADED,
   PROFILE_FAVORITES_PAGE_UNLOADED,
+  APPLY_TITLE_FILTER,
 } from "../constants/actionTypes";
 
 const reducer = (state = {}, action) => {
@@ -45,6 +46,11 @@ const reducer = (state = {}, action) => {
         tab: null,
         tag: action.tag,
         currentPage: 0,
+      };
+    case APPLY_TITLE_FILTER:
+      return {
+        ...state,
+        title: action.text,
       };
     case HOME_PAGE_LOADED:
       return {

@@ -70,6 +70,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const MainView = (props) => {
+  let titleFilter = null;
+  if (props.title && props.title.length >= 3) {
+    titleFilter = props.title;
+  }
   return (
     <div>
       <div className="feed-toggle">
@@ -92,6 +96,7 @@ const MainView = (props) => {
         loading={props.loading}
         itemsCount={props.itemsCount}
         currentPage={props.currentPage}
+        titleFilter={titleFilter}
       />
     </div>
   );
